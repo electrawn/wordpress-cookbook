@@ -81,7 +81,8 @@ template "#{node['wordpress']['dir']}/wp-config.php" do
     :logged_in_salt   => node['wordpress']['salt']['logged_in'],
     :nonce_salt       => node['wordpress']['salt']['nonce'],
     :lang             => node['wordpress']['languages']['lang'],
-    :allow_multisite  => node['wordpress']['allow_multisite']
+    :allow_multisite  => node['wordpress']['allow_multisite'],
+    :extras           => node['wordpress']['config']
   )
   owner node['wordpress']['install']['user']
   group node['wordpress']['install']['group']

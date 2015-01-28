@@ -82,7 +82,14 @@ define('WP_DEBUG', false);
 
 <% if @allow_multisite %>
 /* Multisite */
-define( 'WP_ALLOW_MULTISITE', true );
+define('WP_ALLOW_MULTISITE', true );
+<% end %>
+
+/* Extras */
+<% @extras.each do |key, value| -%>
+    <% unless value.empty? -%>
+define('<%= key %>', '<%= value %>');
+    <% end %>
 <% end %>
 
 /* That's all, stop editing! Happy blogging. */
